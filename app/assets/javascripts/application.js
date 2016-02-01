@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require_tree .
 //= require ./fakerApi.js
+
+
+$('input#search-field').on('keyup', function(){
+  var searchText = $(this).val();
+  $.ajax({
+    url: '/api/haikus?search=' + searchText,
+    success: function(data){
+      var haikus = data.haikus;
+      var $list = $('#haiku-list');
+      renderHaikuList(haikus, $list)
+    }
+  })
+})
