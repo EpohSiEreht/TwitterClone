@@ -1,3 +1,144 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form#search{
+  position: absolute;
+  top: 9px;
+  right: 15%;
+}
+
+input#search-field{
+  border-radius: 20px;
+  height: 32px;
+  width: 180px;
+  background-color: rgb(245, 248, 249);
+  font-size: 12px;
+}
+
+#trend-area{
+  position: fixed;
+  height: 100%;
+  height: 600px;
+  width: 15%;
+  left: 10%;
+}
+
+.trend{
+  position: relative;
+  top: 10px;
+  height: 80%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 12px;
+  background-color: white;
+}
+
+// <img id="pic" ng-src={{user.image}}>
+//         <h3 id="name"> {{user.name}} </h3>
+//         <h6 id="username"> {{user.username}} </h6>
+//         <p id="tweet"> {{user.tweet}} </p>
+
+.form-area{
+  position: relative;
+  width: 590px;
+  top: 10px;
+  height: auto;
+  background-color: rgb(231, 241, 246);
+  left: 33%;
+  padding: 10px 10px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border: 1px solid rgb(197, 223, 235);
+}
+
+img#tweet-pic{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border-radius: 12px;
+}
+
+.tweetform{
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.tweet-area{
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  padding: 10px 10px;
+  border: 1px solid lightgrey;
+  margin-top: -2px;
+}
+
+// input.input-tweet{
+// position: absolute;
+// left: 70px;
+// width: 85%;
+// font-size: 12px;
+// }
+
+textarea.tweet{
+  padding-top: 11px;
+  margin: 0;
+  position: relative;
+  resize: none;
+  width: 85%;
+  left: 70px;
+  border: 1px solid rgb(197, 223, 235);
+  font-size: 12px;
+  outline: none;
+}
+
+.newsfeed{
+  position: relative;
+  width: 590px;
+  top: 0px;
+  left: 33%;
+}
+
+input#submit{
+  display: none;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin-left: 80%;
+  background-color: rgb(77, 154, 192);
+  color: white;
+  border: none;
+}
+
+#pic{
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#name{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  top: 0;
+  left: 60px;
+}
+
+#username{
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  top: 0;
+  margin-left: 65px;
+}
+
+#tweet{
+  position: relative;
+  left: 60px;
+  top: -20px;
+}

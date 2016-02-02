@@ -25,7 +25,7 @@ app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scop
           $http.post('/api/users', {user: $scope.newUser}).then(function(response){
             var data = response.data;
 
-            $scope.users.push({name: data.name, image: data.image, tweet: data.tweet, username: data.username});
+            $scope.users.unshift({name: data.name, image: data.image, tweet: data.tweet, username: data.username});
 
           });
 

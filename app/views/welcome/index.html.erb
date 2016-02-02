@@ -1,24 +1,37 @@
 <section ng-controller="UsersController">
 
   <form id="search">
-    <input id='search-field' type="text" name="search" placeholder="&#xf002; search">
+    <input class="fa fa-search" id='search-field' type="text" name="search" placeholder=" Search Twitter                    &#xf002;">
   </form>
 
-  <form ng-submit="createTweet()" class="tweetform">
-    <input type="hidden" ng-model="newUser.name" name="name">
-    <input type="hidden" ng-model="newUser.image" name="image">
-    <input type="hidden" ng-model="newUser.username" name="username">
-    <input type="text" ng-model="newUser.tweet" name="tweet"placeholder="What's happening?">
-    <input type="submit">
-  </form>
+  <div class="container">
+    <section class="three columns" id="trend-area">
+      <div class="trend">
+      </div>
+    </section>
 
-  <div ng-repeat="user in users" class="newsfeed">
+    <section class="four columns">
+      <div class="form-area">
+        <img src="http://votecloud.jp/img/User/4043/icon.png" id="tweet-pic">
+        <form ng-submit="createTweet()" class="tweetform">
+          <input type="hidden" ng-model="newUser.name" name="name">
+          <input type="hidden" ng-model="newUser.image" name="image">
+          <input type="hidden" ng-model="newUser.username" name="username">
+          <!-- <input type="text" class="input-tweet" placeholder="What's happening?"> -->
+          <textarea type="text" ng-model="newUser.tweet" name="tweet"placeholder="What's happening?" class="tweet" rows="5" cols="70" maxlength="149"></textarea>
+          <input type="submit" id="submit" value="Tweet">
+        </form>
+      </div>
 
-    <img src={{user.image}}>
-    <h3> {{user.name}} </h3>
-    <h6> {{user.username}} </h6>
-    <p> {{user.tweet}} </p>
-
+      <div ng-repeat="user in users" class="newsfeed">
+        <div class="tweet-area">
+          <img ng-src={{user.image}} id="pic">
+          <h3 id="name"> {{user.name}} </h3>
+          <h6 id="username"> {{user.username}} </h6>
+          <p id="tweet"> {{user.tweet}} </p>
+        </div>
+      </div>
+    </section>
   </div>
 
 </section>

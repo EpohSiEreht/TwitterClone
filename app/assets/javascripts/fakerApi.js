@@ -16,7 +16,7 @@ api.factory('fakerApi', ['$http', function($http){
 
 
   fakerInfo.getImage = function(){
-    return $http.get('http://faker.hook.io?property=image.people&locale=de');
+    return $http.get('http://faker.hook.io/?property=image.avatar&locale=de');
   };
 
 

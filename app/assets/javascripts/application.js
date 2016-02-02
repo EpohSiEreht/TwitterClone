@@ -27,3 +27,24 @@ $('input#search-field').on('keyup', function(){
     }
   })
 })
+
+function expandTweet(){
+  $('body').on('click', 'textarea.tweet', function(e){
+    e.preventDefault();
+    $('.form-area').css('height', 'auto');
+    $('textarea.tweet').show();
+    $('input#submit').show();
+    $(this).animate({
+      height: "80px"
+    }, 300);
+  });
+  // if( $('body').on('click', function(){
+  //   $('input.input-tweet').show();
+  //   $('.form-area').css('height', '40px');
+  //   $('textarea.tweet').hide();
+  // }));
+}
+
+$(function(){
+  expandTweet();
+});

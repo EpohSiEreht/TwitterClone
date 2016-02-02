@@ -17,20 +17,24 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #E1E8DF;
+  background-color: rgb(245, 248, 249);
 }
 
 /* main navigation */
 nav {
   background-color: white;
-  padding:10px 0;
-  height: 60px;
+  padding: 0;
+  height: 50px;
 }
 
 nav ul {
+  position: relative;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 80%;
+  left: 10%;
+  height: 50px;
 }
 
 nav ul li {
@@ -39,8 +43,25 @@ nav ul li {
   color:black;
 }
 
+img.home{
+  height: 45px;
+}
+
 .title{
-  float:right;
-  font-size:50px;
-  padding:0 20px
+  position: relative;
+  width: 20%;
+  font-size: 30px;
+  padding:0 20px;
+  text-align: center;
+  left: 30%;
+  top: -10px;
+}
+
+img.logo{
+  position: relative;
+  height: 30px;
+  width: auto;
+  top: 5px;
+  margin: 0 auto;
+  text-align: center;
 }
