@@ -1,7 +1,8 @@
 <section ng-controller="UsersController">
 
   <form id="search">
-    <input class="fa fa-search" id='search-field' type="text" name="search" placeholder=" Search Twitter                    &#xf002;">
+    <input class="fa fa-search" id='search-field' type="text" name="search" ng-model="q" placeholder=" Search Twitter                    &#xf002;">
+
   </form>
 
   <div class="container">
@@ -13,7 +14,7 @@
 
       <div class="form-area">
         <img src="http://votecloud.jp/img/User/4043/icon.png" id="tweet-pic">
-        <form ng-submit="createTweet()" class="tweetform">
+        <form ng-submit="createTweet()" class="tweetform" id="tweetinput">
           <input type="hidden" ng-model="newUser.name" name="name">
           <input type="hidden" ng-model="newUser.image" name="image">
           <input type="hidden" ng-model="newUser.username" name="username">
@@ -26,7 +27,7 @@
         </form>
       </div>
 
-      <div ng-repeat="user in users | orderBy: '-created_at'" class="newsfeed">
+      <div ng-repeat="user in users | filter:q |orderBy: '-created_at'" class="newsfeed">
         <div class="tweet-area">
           <img ng-src={{user.image}} id="pic">
           <h3 id="name"> {{user.name}} </h3>

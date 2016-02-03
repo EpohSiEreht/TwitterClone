@@ -19,6 +19,7 @@ input#search-field{
   border: 1px solid #D8DEE7;
   padding-left: 12px;
   color: #4C4D4F;
+  outline: none;
 }
 
 #trend-area{
@@ -116,7 +117,7 @@ input#submit{
   position: relative;
   width: 100px;
   height: 40px;
-  margin-left: 80%;
+  margin-left: 68%;
   background-color: rgb(77, 154, 192);
   color: white;
   border: none;

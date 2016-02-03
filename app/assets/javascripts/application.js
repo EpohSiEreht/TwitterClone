@@ -45,19 +45,19 @@ function expandTweet(){
   // }));
 }
 
-function timeAgo(){
-  var date = $('p#time').val();
-  moment(date).format('YYYY-MM-DD hh:mm:ss');
-  var newDate = new Date(moment(date).format('YYYY-MM-DD hh:mm:ss'));
-  console.log(newDate);
-  var fromNow = moment(newDate).fromNow();
-  console.log(fromNow);
-  $('p#time').empty();
-  $('p#time').html(fromNow);
-}
+$(document).click(function(e) {
+
+  // check that your clicked
+  // element has no id=info
+
+  if( e.target.id != 'tweetinput') {
+    $('.form-area').css('height', '80px');
+  }
+});
+
 
 $(function(){
   expandTweet();
 
-  timeAgo();
+
 });
