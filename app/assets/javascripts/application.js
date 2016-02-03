@@ -45,6 +45,19 @@ function expandTweet(){
   // }));
 }
 
+function timeAgo(){
+  var date = $('p#time').val();
+  moment(date).format('YYYY-MM-DD hh:mm:ss');
+  var newDate = new Date(moment(date).format('YYYY-MM-DD hh:mm:ss'));
+  console.log(newDate);
+  var fromNow = moment(newDate).fromNow();
+  console.log(fromNow);
+  $('p#time').empty();
+  $('p#time').html(fromNow);
+}
+
 $(function(){
   expandTweet();
+
+  timeAgo();
 });

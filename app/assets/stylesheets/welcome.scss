@@ -9,16 +9,20 @@ form#search{
 }
 
 input#search-field{
+  position: relative;
   border-radius: 20px;
   height: 32px;
   width: 180px;
+  top: -2px;
   background-color: rgb(245, 248, 249);
   font-size: 12px;
+  border: 1px solid #D8DEE7;
+  padding-left: 12px;
+  color: #4C4D4F;
 }
 
 #trend-area{
-  position: fixed;
-  height: 100%;
+  position: absolute;
   height: 600px;
   width: 15%;
   left: 10%;
@@ -41,11 +45,11 @@ input#search-field{
 
 .form-area{
   position: relative;
-  width: 590px;
+  width: 40%;
   top: 10px;
   height: auto;
   background-color: rgb(231, 241, 246);
-  left: 33%;
+  left: 27%;
   padding: 10px 10px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -54,10 +58,11 @@ input#search-field{
 
 img#tweet-pic{
   position: absolute;
-  width: 40px;
-  height: 40px;
-  margin-left: 10px;
-  border-radius: 12px;
+  width: 25px;
+  height: 25px;
+  top: 13px;
+  margin-left: 30px;
+  border-radius: 3px;
 }
 
 .tweetform{
@@ -68,12 +73,12 @@ img#tweet-pic{
 
 .tweet-area{
   position: relative;
-  height: auto;
+  height: 80px;
   width: 100%;
   background-color: white;
   padding: 10px 10px;
   border: 1px solid lightgrey;
-  margin-top: -2px;
+  margin-top: 0;
 }
 
 // input.input-tweet{
@@ -86,20 +91,24 @@ img#tweet-pic{
 textarea.tweet{
   padding-top: 11px;
   margin: 0;
-  position: relative;
   resize: none;
-  width: 85%;
+  position: relative;
+  width: 70%;
   left: 70px;
   border: 1px solid rgb(197, 223, 235);
   font-size: 12px;
   outline: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .newsfeed{
   position: relative;
-  width: 590px;
+  width: 40%;
   top: 0px;
-  left: 33%;
+  left: 27%;
 }
 
 input#submit{
@@ -111,6 +120,8 @@ input#submit{
   background-color: rgb(77, 154, 192);
   color: white;
   border: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 #pic{
@@ -124,21 +135,60 @@ input#submit{
 #name{
   position: relative;
   display: inline-block;
-  font-size: 18px;
-  top: 0;
+  font-size: 14px;
+  top: 0px;
   left: 60px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #username{
   position: relative;
   display: inline-block;
-  font-size: 12px;
-  top: 0;
-  margin-left: 65px;
+  font-size: 14px;
+  top: 0px;
+  margin-left: 60px;
+  color: #AEB3BB;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+}
+
+h3{
+  margin: 0;
+}
+
+h6{
+  margin: 0;
 }
 
 #tweet{
   position: relative;
   left: 60px;
-  top: -20px;
+  top: 0px;
+  margin: 0;
+}
+
+#time{
+  position: relative;
+  display: inline-block;
+  left: 5px;
+  top: -2px;
+  color: #AEB3BB;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+}
+
+#poster-area{
+  position: relative;
+  display: inline-block;
+  height: 600px;
+  width: 200px;
+}
+
+img#poster{
+  position: absolute;
+  top: 60px;
+  height: auto;
+  width: 15%;
+  left: 71%;
+  border-radius: 12px;
 }

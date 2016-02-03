@@ -10,28 +10,36 @@
       </div>
     </section>
 
-    <section class="four columns">
+
       <div class="form-area">
         <img src="http://votecloud.jp/img/User/4043/icon.png" id="tweet-pic">
         <form ng-submit="createTweet()" class="tweetform">
           <input type="hidden" ng-model="newUser.name" name="name">
           <input type="hidden" ng-model="newUser.image" name="image">
           <input type="hidden" ng-model="newUser.username" name="username">
+          <input type="hidden" ng-model="newUser.moment" name="moment">
           <!-- <input type="text" class="input-tweet" placeholder="What's happening?"> -->
-          <textarea type="text" ng-model="newUser.tweet" name="tweet"placeholder="What's happening?" class="tweet" rows="5" cols="70" maxlength="149"></textarea>
+          <!-- <div type="text" ng-model="newUser.tweet" name="tweet"placeholder="What's happening?" class="tweet" role="textbox" aria-multiline="true" contenteditable="true"></div> -->
+          <textarea type="text" ng-model="newUser.tweet" name="tweet"placeholder="What's happening?" class="tweet" rows="1" cols="60"></textarea>
+
           <input type="submit" id="submit" value="Tweet">
         </form>
       </div>
 
-      <div ng-repeat="user in users" class="newsfeed">
+      <div ng-repeat="user in users | orderBy: '-created_at'" class="newsfeed">
         <div class="tweet-area">
           <img ng-src={{user.image}} id="pic">
           <h3 id="name"> {{user.name}} </h3>
           <h6 id="username"> {{user.username}} </h6>
+          <h6 id="time"> {{user.created_at | myDateFormat}} </h6>
           <p id="tweet"> {{user.tweet}} </p>
         </div>
       </div>
-    </section>
+
+      <div class="poster-area">
+        <img src="http://drbexl.co.uk/wp-content/uploads/2011/07/keep-calm-tweet-on.jpg" id="poster">
+      </div>
+
   </div>
 
 </section>

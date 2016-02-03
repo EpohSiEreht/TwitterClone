@@ -17,7 +17,9 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: rgb(245, 248, 249);
+  background-image: url(https://secure.static.tumblr.com/5834764bfac0916b4e5506066c5e8af8/mfwug97/kz6mxi6lt/tumblr_static_bluecloud.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* main navigation */
@@ -45,6 +47,10 @@ nav ul li {
 
 img.home{
   height: 45px;
+}
+
+img.home:hover{
+  border-bottom: 5px solid #2767B7;
 }
 
 .title{
