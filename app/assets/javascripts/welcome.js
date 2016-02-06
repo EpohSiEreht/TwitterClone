@@ -34,14 +34,6 @@ app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scop
 
   $scope.createTweet = function(){
 
-    // $scope.newUser.name = Faker::Name.first_name + Faker::Name.last_name;
-
-    $http.post('/api/users', {user: $scope.newUser}).then(function(response){
-      var data = response.data;
-      console.log( data );
-      $scope.users.unshift({name: data.name, image: data.image, tweet: data.tweet, username: data.username, created_at: data.created_at});
-    });
-
     fakerApi.getName().then(function(response){
       $scope.newUser.name = JSON.parse(response.data);
 
