@@ -16,18 +16,6 @@
 //= require ./fakerApi.js
 
 
-$('input#search-field').on('keyup', function(){
-  var searchText = $(this).val();
-  $.ajax({
-    url: '/api/haikus?search=' + searchText,
-    success: function(data){
-      var haikus = data.haikus;
-      var $list = $('#haiku-list');
-      renderHaikuList(haikus, $list)
-    }
-  })
-})
-
 function expandTweet(){
   $('body').on('click', 'textarea.tweet', function(e){
     e.preventDefault();
@@ -38,25 +26,12 @@ function expandTweet(){
       height: "80px"
     }, 300);
   });
-  // if( $('body').on('click', function(){
-  //   $('input.input-tweet').show();
-  //   $('.form-area').css('height', '40px');
-  //   $('textarea.tweet').hide();
-  // }));
 }
-
-$(document).click(function(e) {
-
-  // check that your clicked
-  // element has no id=info
-
-  if( e.target.id != 'tweetinput') {
-    $('.form-area').css('height', '80px');
-  }
-});
 
 
 $(function(){
+
+
   expandTweet();
 
 
