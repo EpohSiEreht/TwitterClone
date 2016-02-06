@@ -47,7 +47,7 @@ app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scop
             var data = response.data;
             console.log( data );
             $scope.users.unshift({name: data.name, image: data.image, tweet: data.tweet, username: data.username, created_at: data.created_at});
-            $scope.newUser = '';
+            $scope.newUser.tweet = '';
           });
 
         });
