@@ -55,6 +55,7 @@ app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scop
       });
 
     });
+    /// SEED A TON OF USERS AND JUST GRAB AT RANDOM WHEN CREATING A TWEET
 
   };
   console.log($scope.users);
