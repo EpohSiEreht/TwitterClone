@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require ./fakerApi.js
+//= require faker
 
 
 function expandTweet(){

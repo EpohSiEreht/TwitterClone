@@ -2,17 +2,17 @@ var app = angular.module('UserTweet', ['fakerApiFactory']);
 
 // app.service('myDateFormat', function () { /* ... */ });
 
-// app.filter('myDateFormat', function myDateFormat($filter){
-//   return function(text){
-//     var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
-//     console.log(newDate);
-//     var fromNow = moment(newDate).fromNow();
-//     console.log(fromNow);
-//     return $filter('date')(fromNow);
-//   }
-// });
+app.filter('myDateFormat', function myDateFormat($filter){
+  return function(text){
+    var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
+    console.log(newDate);
+    var fromNow = moment(newDate).fromNow();
+    console.log(fromNow);
+    return $filter('date')(fromNow);
+  }
+});
 
-app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scope, $http, fakerApi){
+app.controller('UsersController', ['$scope', '$http', function($scope, $http){
 
   // bind the controller to vm (view-model)
   var vm = this;
@@ -31,49 +31,23 @@ app.controller('UsersController', ['$scope', '$http', 'fakerApi', function($scop
 
 
   $scope.newUser = {};
-
+  
   $scope.createTweet = function(){
 
-    fakerApi.getName().then(function(response){
-      $scope.newUser.name = JSON.parse(response.data);
+    $scope.newUser.name = faker.name.findName();
 
-      fakerApi.getUsername().then(function(response){
-        $scope.newUser.username = "@" + JSON.parse(response.data);
+    $scope.newUser.username = faker.internet.userName();
 
-        fakerApi.getImage().then(function(response){
-          $scope.newUser.image = JSON.parse(response.data);
+    $scope.newUser.image = faker.internet.avatar();
 
-          $http.post('/api/users', {user: $scope.newUser}).then(function(response){
-            var data = response.data;
-            console.log( data );
-            $scope.users.unshift({name: data.name, image: data.image, tweet: data.tweet, username: data.username, created_at: data.created_at});
-            $scope.newUser.tweet = '';
-          });
-
-        });
-
-      });
-
+    $http.post('/api/users', {user: $scope.newUser}).then(function(response){
+      console.log(response);
+      var data = response.data;
+      console.log( data );
+      $scope.users.unshift({name: data.name, image: data.image, tweet: data.tweet, username: data.username, created_at: data.created_at});
+      $scope.newUser.tweet = '';
     });
-    /// SEED A TON OF USERS AND JUST GRAB AT RANDOM WHEN CREATING A TWEET
-
   };
-  console.log($scope.users);
-
-//   $scope.convertTime = function(){
-
-//   }
-
-//   function timeAgo(){
-//   var date = $('p#time').val();
-//   moment(date).format('YYYY-MM-DD hh:mm:ss');
-//   var newDate = new Date(moment(date).format('YYYY-MM-DD hh:mm:ss'));
-//   console.log(newDate);
-//   var fromNow = moment(newDate).fromNow();
-//   console.log(fromNow);
-//   $('p#time').empty();
-//   $('p#time').html(fromNow);
-// }
 
   return $scope.newUser;
 
