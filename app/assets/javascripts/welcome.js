@@ -42,11 +42,15 @@ app.controller('UsersController', ['$scope', '$http', '$q', function($scope, $ht
 }]);
 
 app.filter('myDateFormat', function myDateFormat($filter){
-  return function(text){
-    var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
-    console.log(newDate);
-    var fromNow = moment(newDate).fromNow();
-    console.log(fromNow);
-    return $filter('date')(fromNow);
+  if(!$filter){
+    console.log('none to be found');
+  } else {
+    return function(text){
+      var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
+      console.log(newDate);
+      var fromNow = moment(newDate).fromNow();
+      console.log(fromNow);
+      return $filter('date')(fromNow);
+    }
   }
 });
