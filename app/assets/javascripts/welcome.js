@@ -1,6 +1,6 @@
 var app = angular.module('UserTweet', ['fakerApiFactory']);
 
-app.filter('myDateFormat', function myDateFormat($filter){
+app.service('myDateFormat', function myDateFormat($filter){
   return function(text){
     var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
     console.log(newDate);
@@ -10,7 +10,7 @@ app.filter('myDateFormat', function myDateFormat($filter){
   }
 });
 
-app.controller('UsersController', ['$scope', '$http', function($scope, $http){
+app.controller('UsersController', ['$scope', '$http', 'myDateFormat', function($scope, $http, myDateFormat){
 
   // bind the controller to vm (view-model)
   var vm = this;
