@@ -6,17 +6,17 @@ api.factory('fakerApi', ['$http', function($http){
 
 
   fakerInfo.getName = function(){
-    return $http.get('http://faker.hook.io?property=name.findName&locale=de');
+    return $http.get('https://faker.hook.io?property=name.findName&locale=de');
   };
 
 
   fakerInfo.getUsername = function(){
-    return $http.get('http://faker.hook.io?property=internet.userName&locale=de');
+    return $http.get('https://faker.hook.io?property=internet.userName&locale=de');
   };
 
 
   fakerInfo.getImage = function(){
-    return $http.get('http://faker.hook.io/?property=image.avatar&locale=de');
+    return $http.get('https://faker.hook.io/?property=image.avatar&locale=de');
   };
 
 
