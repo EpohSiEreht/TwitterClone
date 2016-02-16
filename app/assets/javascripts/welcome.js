@@ -1,6 +1,6 @@
 var app = angular.module('UserTweet', []);
 
-app.controller('UsersController', ['$scope', '$http', function($scope, $http){
+app.controller('UsersController', ['$scope', '$http', '$q', function($scope, $http, $q){
 
   // bind the controller to vm (view-model)
   var vm = this;
