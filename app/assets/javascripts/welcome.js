@@ -1,6 +1,6 @@
 var app = angular.module('UserTweet', ['fakerApiFactory']);
 
-// app.service('myDateFormat', function () { /* ... */ });
+app.service('myDateFormat', function () { /* ... */ });
 
 app.filter('myDateFormat', function myDateFormat($filter){
   return function(text){
