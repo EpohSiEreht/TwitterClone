@@ -1,16 +1,6 @@
-var app = angular.module('UserTweet', ['fakerApiFactory']);
+var app = angular.module('UserTweet', []);
 
-app.service('myDateFormat', function myDateFormat($filter){
-  return function(text){
-    var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
-    console.log(newDate);
-    var fromNow = moment(newDate).fromNow();
-    console.log(fromNow);
-    return $filter('date')(fromNow);
-  }
-});
-
-app.controller('UsersController', ['$scope', '$http', 'myDateFormat', function($scope, $http, myDateFormat){
+app.controller('UsersController', ['$scope', '$http', function($scope, $http){
 
   // bind the controller to vm (view-model)
   var vm = this;
@@ -50,3 +40,13 @@ app.controller('UsersController', ['$scope', '$http', 'myDateFormat', function($
   return $scope.newUser;
 
 }]);
+
+app.filter('myDateFormat', function myDateFormat($filter){
+  return function(text){
+    var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
+    console.log(newDate);
+    var fromNow = moment(newDate).fromNow();
+    console.log(fromNow);
+    return $filter('date')(fromNow);
+  }
+});
