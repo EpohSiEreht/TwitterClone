@@ -1,7 +1,5 @@
 var app = angular.module('UserTweet', ['fakerApiFactory']);
 
-app.service('myDateFormat', function () { /* ... */ });
-
 app.filter('myDateFormat', function myDateFormat($filter){
   return function(text){
     var newDate = new Date(moment(text).format('YYYY-MM-DD hh:mm:ss a'));
@@ -31,7 +29,7 @@ app.controller('UsersController', ['$scope', '$http', function($scope, $http){
 
 
   $scope.newUser = {};
-  
+
   $scope.createTweet = function(){
 
     $scope.newUser.name = faker.name.findName();
